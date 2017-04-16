@@ -126,13 +126,14 @@ class Editor():
 
     def main_loop(self):
         # refresh screen, write buffer
+        i = 0
         while True:
 
             self.screen.write_buffer()
             self.screen.refresh()
 
             ch = self.screen.term.tty.read(1)
-            i = 0
+
             self.screen.move_cursor(i, i)
             i += 1
             self.screen.term.tty.write(ch)
